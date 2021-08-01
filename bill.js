@@ -41,9 +41,7 @@ function playFor(aPerformance) {
 }
   // loop to each performance
   for(let perf of invoice.performances) {
-    // const play = plays[perf.playID];
-    // const play = playFor(perf);
-    let thisAmount = amountFor(perf); 
+    // let thisAmount = amountFor(perf); 
 
     // add volume volume volumeCredits
     volumeCredits += Math.max(perf.audience - 30, 0); 
@@ -52,9 +50,9 @@ function playFor(aPerformance) {
     if('comedy' === playFor(perf).type) volumeCredits += Math.floor(perf.audience / 5);
 
     // PRINT line for this order
-    result += `${playFor(perf).name} :: ${format(thisAmount/100)}
+    result += `${playFor(perf).name} :: ${format(amountFor(perf)/100)}
     (${perf.audience} seats) \n`;
-    totalAmount += thisAmount;
+    totalAmount += amountFor(perf);
 
   }
   result += '\n';
